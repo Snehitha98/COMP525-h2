@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+# Source: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+# January 28, 2020
+# Mihaela
+
+__pycache__/
+*.py[cod]
+*$py.class
