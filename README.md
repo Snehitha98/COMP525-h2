@@ -29,7 +29,7 @@ def make_roster(self, student_list):
         * concatenate **ele** to **lst_of_strings** and store it in a list **lst_of_strings**  
 * Making last and first names as sublist from lst_of_strings
 * Assign an empty list to a variable of type list named **list_lst_nd_fstnames**
-* Define and initialize an accumulator called **k**, of type integer that returns range of number of elements in a list from zero to length of lst_of_strings, incremented by 2
+* Define and initialize an accumulator called **k**, of type integer that returns range of number of elements in a list from zero to length of lst_of_strings, with a step value 2
 * use for loop to iterate over **k**  with loop variable named **i**
     * using slicing method making two strings into a sublist and storing it in a list **list_lst_nd_fstnames**
     * concatenating list_lst_nd_fstnames and using slicing making last and first name as sublist and storing it in **list_lst_nd_fstnames**
@@ -68,4 +68,34 @@ def sort_roster(self, students):
          * storing the value in dictionary **result** of specified key
          * removing the value from **keys**
          * break the loop
+* Return **result**
+
+### add_gpa()
+```
+def add_gpa(self, student_list, gpa_list):
+    """
+    Parses the two parallel lists, student_list and gpa_list to create
+    a new list of sublists
+    student_list: list of sublits, where a sublist has two
+    positional items
+        student ID - 3-digit integer starting with digit 9
+        last name - alphabetic string
+    Returns: list of sublists, where a sublist has three positional items:
+        student ID - 3-digit integer (from student_list sublists)
+        last name - string (from student_list sublists)
+        gpa - decimal number (from gpa_list)
+    """
+```
+* Making all the sublists of student_list into a single list
+* Assign an empty list to a variable of type list named **flat_list**
+* use for loop to iterate over **student_list**  with loop variable named **sub_list**
+    * use for loop to iterate over **sub_list**  with loop variable named **ele**
+        * append ele to **flat_list**
+* Assigning value two to variable named **index**
+* use for loop to iterate over **gpa_list**  with loop variable named **gpa**
+    * insert gpa at specified index position in flat_list
+    * increment index by 3
+* Assign an empty list to variable named **result**
+* initialize a variable named **k**, of type integer that returns range of number of elements in a list from zero to length of flat_list, with a step value 3
+* concatenating result and slicing flat_list by making ID,last name and gpa as sublist and storing it in a list **result**
 * Return **result**
