@@ -118,7 +118,7 @@ class StudentModel:
             gpa_values=gpa_values+[int(lst[len(lst)-1])]
         frequency=[]
         for value in gpa_values:
-            frequency=frequency+[gpa_values.count(value)]    
+            frequency=frequency+[gpa_values.count(value)]
         result={}
         for key in gpa_values:
             for value in frequency:
@@ -160,7 +160,10 @@ if __name__ == '__main__':
     print(f'(add_gpa{student_list},{gpa_list}) returns {result}')
 
 
-
     student_list = [[901,'Mamidi',9.01],[915,'Pabbathi',8.2],[915,'Padidam',9.9],[915,'Neela',7.2]]
+    result = sm.gpa_histogram(student_list)
+    print(f'(gpa_histogram{student_list}) returns {result}')
+    # Test case for gpa_histogram()
+    student_list = [[901,'Mamidi',6.3],[915,'Pabbathi',6.9],[915,'Padidam',6.01],[915,'Neela',6.12],[900,'Podamekala',4.3]]
     result = sm.gpa_histogram(student_list)
     print(f'(gpa_histogram{student_list}) returns {result}')
