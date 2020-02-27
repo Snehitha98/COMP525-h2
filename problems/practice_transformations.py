@@ -96,6 +96,10 @@ if __name__ == '__main__':
     student_list = [[901,'Mamidi','Snehitha'],[915,'Pabbathi','Harshitha']]
     result = sm.make_roster(student_list)
     print(f'(make_roster{student_list}) returns {result}')
+    # Test case for make_roster()
+    student_list = [[999,'Padidam','Pushyami']]
+    result = sm.make_roster(student_list)
+    print(f'(make_roster{student_list}) returns {result}')
 
 
     students = {901:['Mamidi','Snehitha'],915:['Pabbathi','Harshitha']}
