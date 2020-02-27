@@ -141,6 +141,12 @@ if __name__ == '__main__':
     gpa_list = [9.8, 8.1]
     result = sm.add_gpa(student_list,gpa_list)
     print(f'(add_gpa{student_list},{gpa_list}) returns {result}')
+    # Test case for add_gpa()
+    student_list = [[999,'Bairy']]
+    gpa_list = [9.8]
+    result = sm.add_gpa(student_list,gpa_list)
+    print(f'(add_gpa{student_list},{gpa_list}) returns {result}')
+
 
 
     student_list = [[901,'Mamidi',9.01],[915,'Pabbathi',8.2],[915,'Padidam',9.9],[915,'Neela',7.2]]
