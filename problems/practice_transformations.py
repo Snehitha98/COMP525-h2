@@ -87,8 +87,8 @@ class StudentModel:
             gpa - decimal number (from gpa_list)
         """
         flat_list = []
-        for sub_lst in student_list:
-            for ele in sub_lst:
+        for sub_list in student_list:
+            for ele in sub_list:
                 flat_list.append(ele)
         index = 2
         for gpa in gpa_list:
@@ -113,7 +113,19 @@ class StudentModel:
                 positive integers
             values: frequency of the gpa values in the student list
         """
-        pass
+        gpa_values=[]
+        for lst in student_list:
+            gpa_values=gpa_values+[int(lst[len(lst)-1])]
+        frequency=[]
+        for value in gpa_values:
+            frequency=frequency+[gpa_values.count(value)]    
+        result={}
+        for key in gpa_values:
+            for value in frequency:
+                result[key]=value
+                frequency.remove(value)
+                break
+        return result
 
 
 if __name__ == '__main__':
