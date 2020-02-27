@@ -57,7 +57,21 @@ class StudentModel:
             keys are last names
             values are student IDs that correspond to that last name
         """
-        pass
+        keys=[]
+        for key in students:
+            keys+=[key]
+        values=[]
+        for key in students:
+            values = values + students[key]
+        lst_name=[]
+        lst_name=values[0:len(values):2]
+        result={}
+        for key in lst_name:
+            for value in keys:
+                result[key] = value
+                keys.remove(value)
+                break
+        return result
 
     def add_gpa(self, student_list, gpa_list):
         """
@@ -105,7 +119,6 @@ if __name__ == '__main__':
     students = {901:['Mamidi','Snehitha'],915:['Pabbathi','Harshitha']}
     result = sm.sort_roster(students)
     print(f'(sort_roster{students}) returns {result}')
-
 
     student_list = [[901,'Mamidi'],[915,'Pabbathi']]
     gpa_list = [10, 9.8]
