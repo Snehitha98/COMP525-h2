@@ -1,7 +1,7 @@
 """
 h2.py
-(enter your name)
-(enter date)
+Snehitha Mamidi
+February 25, 2020
 """
 
 
@@ -24,7 +24,28 @@ class StudentModel:
             values are lists of two positional items
                 last name and first name - alphabetic strings
         """
-        pass
+        flat_list = []
+        for sublist in student_list:
+            for item in sublist:
+                flat_list.append(item)
+        keys = []
+        keys = flat_list[0:len(flat_list):3]
+        unwanted_numbers = keys
+        lst_of_strings = []
+        for ele in flat_list:
+            if ele not in unwanted_numbers:
+                lst_of_strings = lst_of_strings + [ele]
+        list_lst_nd_fstnames = []
+        k = range(0,len(lst_of_strings),2)
+        for i in k:
+            list_lst_nd_fstnames = list_lst_nd_fstnames + [lst_of_strings[i:i+2]]
+        result = {}
+        for key in keys:
+            for value in list_lst_nd_fstnames:
+                result[key] = value
+                list_lst_nd_fstnames.remove(value)
+                break
+        return result
 
     def sort_roster(self, students):
         """
@@ -72,3 +93,22 @@ class StudentModel:
 if __name__ == '__main__':
     sm = StudentModel()
     # Write test cases for all four functions
+    student_list = [[901,'Mamidi','Snehitha'],[915,'Pabbathi','Harshitha']]
+    result = sm.make_roster(student_list)
+    print(f'(make_roster{student_list}) returns {result}')
+
+
+    students = {901:['Mamidi','Snehitha'],915:['Pabbathi','Harshitha']}
+    result = sm.sort_roster(students)
+    print(f'(sort_roster{students}) returns {result}')
+
+
+    student_list = [[901,'Mamidi'],[915,'Pabbathi']]
+    gpa_list = [10, 9.8]
+    result = sm.add_gpa(student_list,gpa_list)
+    print(f'(add_gpa{student_list},{gpa_list}) returns {result}')
+
+
+    student_list = [[901,'Mamidi',9.01],[915,'Pabbathi',8.2],[915,'Padidam',9.9],[915,'Neela',7.2]]
+    result = sm.gpa_histogram(student_list)
+    print(f'(gpa_histogram{student_list}) returns {result}')
