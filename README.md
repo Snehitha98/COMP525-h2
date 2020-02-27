@@ -97,5 +97,6 @@ def add_gpa(self, student_list, gpa_list):
     * increment index by 3
 * Assign an empty list to variable named **result**
 * initialize a variable named **k**, of type integer that returns range of number of elements in a list from zero to length of flat_list, with a step value 3
-* concatenating result and slicing flat_list by making ID,last name and gpa as sublist and storing it in a list **result**
+* use for loop to iterate over k with loop variable named **i**
+    * concatenating result and slicing flat_list by making ID,last name and gpa as sublist and storing it in a list **result**
 * Return **result**
