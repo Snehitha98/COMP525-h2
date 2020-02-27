@@ -86,7 +86,19 @@ class StudentModel:
             last name - string (from student_list sublists)
             gpa - decimal number (from gpa_list)
         """
-        pass
+        flat_list = []
+        for sub_lst in student_list:
+            for ele in sub_lst:
+                flat_list.append(ele)
+        index = 2
+        for gpa in gpa_list:
+            flat_list.insert(index,gpa)
+            index = index + 3
+        result=[]
+        k = range(0,len(flat_list),3)
+        for i in k:
+            result = result + [flat_list[i:i+3]]
+        return result
 
     def gpa_histogram(self, student_list):
         """
@@ -125,9 +137,8 @@ if __name__ == '__main__':
     print(f'(sort_roster{students}) returns {result}')
 
 
-
     student_list = [[901,'Mamidi'],[915,'Pabbathi']]
-    gpa_list = [10, 9.8]
+    gpa_list = [9.8, 8.1]
     result = sm.add_gpa(student_list,gpa_list)
     print(f'(add_gpa{student_list},{gpa_list}) returns {result}')
 
