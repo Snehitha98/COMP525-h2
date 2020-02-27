@@ -100,3 +100,33 @@ def add_gpa(self, student_list, gpa_list):
 * use for loop to iterate over k with loop variable named **i**
     * concatenating result and slicing flat_list by making ID,last name and gpa as sublist and storing it in a list **result**
 * Return **result**
+
+### gpa_histogram()
+```
+def gpa_histogram(self, student_list):
+    """
+    Parses student_list to create a histogram of student GPAs
+    student_list: list of sublists, where a sublist has three
+    positional items:
+        student ID - 3-digit integer starting with digit 9
+        last name - alphabetic string
+        gpa - decimal number
+    Returns: dictionary
+        keys: converted gpa values from the student_list into
+            positive integers
+        values: frequency of the gpa values in the student list
+    """
+```
+* Assign an empty list to a variable of type list named **gpa_values**
+* use for loop to iterate over **student_list** with loop variable named **lst**
+    * storing only gpa values in a list named **gpa_values** using slicing method and converting them to positive integers  
+* Assign an empty list to a variable of type list named **frequency**
+* use for loop to iterate over **gpa_values** with loop variable named **value**
+    * counting the number of times value is there in gpa_values and storing it in a list **frequency**
+* Assign an empty dictionary to a variable of type dictionary named **result**
+* use for loop to iterate over **gpa_values**  with loop variable named **key**
+    * use for loop to iterate over **frequency**  with loop variable named **value**
+         * storing the value in dictionary **result** of specified key
+         * removing the value from **frequency**
+         * break the loop
+* Return **result**
