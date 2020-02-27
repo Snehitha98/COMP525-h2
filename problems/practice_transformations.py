@@ -57,15 +57,15 @@ class StudentModel:
             keys are last names
             values are student IDs that correspond to that last name
         """
-        keys=[]
+        keys = []
         for key in students:
-            keys+=[key]
-        values=[]
+            keys += [key]
+        values = []
         for key in students:
             values = values + students[key]
-        lst_name=[]
-        lst_name=values[0:len(values):2]
-        result={}
+        lst_name = []
+        lst_name = values[0:len(values):2]
+        result = {}
         for key in lst_name:
             for value in keys:
                 result[key] = value
@@ -119,6 +119,12 @@ if __name__ == '__main__':
     students = {901:['Mamidi','Snehitha'],915:['Pabbathi','Harshitha']}
     result = sm.sort_roster(students)
     print(f'(sort_roster{students}) returns {result}')
+    # Test case for sort_roster()
+    students = {917:['Neela','Pavani'],930:['Bairy','Harini'],904:['Anumala','Amulya'],981:['Gajjula','manoj']}
+    result = sm.sort_roster(students)
+    print(f'(sort_roster{students}) returns {result}')
+
+
 
     student_list = [[901,'Mamidi'],[915,'Pabbathi']]
     gpa_list = [10, 9.8]
