@@ -34,9 +34,38 @@ def make_roster(self, student_list):
     * using slicing method making two strings into a sublist and storing it in a list **list_lst_nd_fstnames**
     * concatenating list_lst_nd_fstnames and using slicing making last and first name as sublist and storing it in **list_lst_nd_fstnames**
 * Assign an empty dictionary to a variable of type dictionary named **result**
-* use for loop to iterate over **key**  with loop variable named **keys**
-    * use for loop to iterate over **value**  with loop variable named **list_lst_nd_fstnames**
+* use for loop to iterate over **keys**  with loop variable named **key**
+    * use for loop to iterate over **list_lst_nd_fstnames**  with loop variable named **value**
          * storing the value in dictionary **result** of specified key
          * removing the value from **list_lst_nd_fstnames**
+         * break the loop
+* Return **result**
+
+### sort_roster()
+```
+def sort_roster(self, students):
+    """
+    Parses students to create a dictionary keyed by student last name
+    students: dictionary
+        keys are student IDs
+        values are lists of two positional items, last name and first name
+    Returns: dictionary
+        keys are last names
+        values are student IDs that correspond to that last name
+    """
+```
+* Assign an empty list to variable named **keys**
+* use for loop to iterate over **students**  with loop variable named **key**
+    * concatenating key to a list keys and storing it in a list **keys**
+* Assign an empty list to variable named **values**
+* use for loop to iterate over **students**  with loop variable named **key**
+    * concatenating values in dictionary students of specified key to a list values and storing it in a list **values**
+* Assign an empty list to variable named **lst_name**
+* using string slicing accessing only last names from values and storing it in **lst_name**
+* Assign an empty dictionary to a variable of type dictionary named **result**
+* use for loop to iterate over **lst_name**  with loop variable named **key**
+    * use for loop to iterate over **keys**  with loop variable named **value**
+         * storing the value in dictionary **result** of specified key
+         * removing the value from **keys**
          * break the loop
 * Return **result**
